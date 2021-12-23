@@ -12,3 +12,31 @@
   clip-path: inset(50%);
   margin: -1px;
 }
+
+.container {
+  max-width: 780px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--lg {
+    max-width: 960px;
+  }
+}
+
+.background--gray {
+  background-color: $base-color-secondary;
+}
+
+.primarySection {
+  padding: 7.5em 0;
+}
+
+.primaryHeading {
+  font-family: $font-ubuntu;
+  font-size: fz(40);
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 1em;
+}
