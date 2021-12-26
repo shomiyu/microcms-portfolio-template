@@ -85,6 +85,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.mainVisual {
+  img {
+    width: 100%;
+  }
+}
+
 .profile {
   &__upper {
     display: flex;
