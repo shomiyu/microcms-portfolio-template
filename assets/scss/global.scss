@@ -18,21 +18,21 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-
-  &--lg {
-    max-width: 960px;
-  }
 }
 
 .background--gray {
   background-color: $base-color-secondary;
 }
 
-.primarySection {
-  padding: 7.5em 0;
+.sectionPrimary {
+  padding: 5em 0;
+
+  @include mq() {
+    padding: 7.5em 0;
+  }
 }
 
-.primaryHeading {
+.headingPrimary {
   font-family: $font-ubuntu;
   font-size: fz(40);
   font-weight: bold;

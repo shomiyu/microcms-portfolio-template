@@ -1,10 +1,14 @@
 <template>
   <div>
-    <div class="mainVisual"></div>
+    <div class="mainVisual">
+      <figure>
+        <img src="https://placehold.jp/1440x436.png" alt="" />
+      </figure>
+    </div>
 
-    <section class="primarySection">
+    <section class="sectionPrimary">
       <div class="container">
-        <h2 class="primaryHeading">about</h2>
+        <h2 class="headingPrimary">about</h2>
         <div class="profile">
           <div class="profile__upper">
             <div class="profile__text">
@@ -31,20 +35,40 @@
       </div>
     </section>
 
-    <section class="primarySection background--gray">
-      <div class="container container--lg">
-        <h2 class="primaryHeading">works</h2>
-        <ol>
-          <li>
-            <figure>
-              <img src="https://placehold.jp/540x334.png" alt="" />
-            </figure>
-            <div>
-              <p>作品名</p>
-              <p><time datetime="2021.12.16">2021.12.16</time></p>
-            </div>
+    <section class="sectionPrimary background--gray">
+      <div class="container">
+        <h2 class="headingPrimary">works</h2>
+        <ol class="works">
+          <li class="works__item">
+            <nuxt-link to="#!" class="works__inner">
+              <figure class="works__image">
+                <img src="https://placehold.jp/370x229.png" alt="" />
+              </figure>
+              <div class="works__text">
+                <p class="works__name">作品名</p>
+                <p class="works__date">
+                  <time datetime="2021-12-16">2021.12.16</time>
+                </p>
+              </div>
+            </nuxt-link>
+          </li>
+          <li class="works__item">
+            <nuxt-link to="#!" class="works__inner">
+              <figure class="works__image">
+                <img src="https://placehold.jp/370x229.png" alt="" />
+              </figure>
+              <div class="works__text">
+                <p class="works__name">作品名</p>
+                <p class="works__date">
+                  <time datetime="2021-12-16">2021.12.16</time>
+                </p>
+              </div>
+            </nuxt-link>
           </li>
         </ol>
+        <p class="button-area">
+          <nuxt-link to="/works" class="buttonPrimary">view more</nuxt-link>
+        </p>
       </div>
     </section>
   </div>
@@ -124,6 +148,96 @@ export default {
 
     img {
       width: 100%;
+    }
+  }
+}
+
+.works {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__item {
+    width: 100%;
+
+    @include mq(lg) {
+      width: calc((100% - 2.5em) / 2);
+    }
+  }
+
+  &__item + &__item {
+    margin-top: 1.5em;
+
+    @include mq() {
+      margin: 0;
+    }
+  }
+
+  &__inner {
+    display: block;
+  }
+
+  &__image {
+    margin-bottom: 0.5em;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__date {
+    font-size: fz(14);
+  }
+}
+
+.button-area {
+  text-align: center;
+  margin-top: 2em;
+
+  @include mq() {
+    margin-top: 2.5em;
+  }
+}
+
+.buttonPrimary {
+  color: $accent-color-blue;
+  display: inline-block;
+  font-family: $font-ubuntu;
+  font-size: fz(18);
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+  text-indent: -1em;
+  line-height: 56px;
+  padding: 0 1em;
+  border: 2px solid;
+  border-radius: 4px;
+  min-width: 230px;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuNzUgNy41MDI0NEwxNSAxMi4wMDAyTDkuNzUgMTYuNTAyNCIgc3Ryb2tlPSIjMDA0REEyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+      center no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &::after {
+      transform: translate(5px, -50%);
     }
   }
 }

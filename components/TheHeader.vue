@@ -7,11 +7,11 @@
       </component>
 
       <!-- ハンバーガーボタン -->
-      <button type="button" class="hamburger">
+      <!-- <button type="button" class="hamburger">
         <span class="hamburger__line">
           <span class="visuallyHidden">メニューを開閉する</span>
         </span>
-      </button>
+      </button> -->
 
       <!-- メニュー -->
       <nav>
@@ -84,7 +84,7 @@ export default {
       display: block;
       width: 0;
       height: 2px;
-      background-color: $text-color-primary;
+      background-color: $accent-color-blue;
       transition: all 0.3s ease-in-out;
       position: absolute;
       left: 0;
