@@ -6,24 +6,14 @@
         <nuxt-link to="/">My Portfolio</nuxt-link>
       </component>
 
-      <!-- ハンバーガーボタン -->
-      <!-- <button type="button" class="hamburger">
-        <span class="hamburger__line">
-          <span class="visuallyHidden">メニューを開閉する</span>
-        </span>
-      </button> -->
-
       <!-- メニュー -->
       <nav>
         <ul class="menu">
           <li>
-            <nuxt-link to="#about" class="menu__link">about</nuxt-link>
+            <nuxt-link to="/#about" class="menu__link">about</nuxt-link>
           </li>
           <li>
             <nuxt-link to="/works" class="menu__link">works</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/contact" class="menu__link">contact</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -51,18 +41,26 @@ export default {
 }
 
 .headerContainer {
-  padding: 0 4em;
+  padding: 0 1.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include mq() {
+    padding: 0 4em;
+  }
 }
 
 .logo {
   color: $text-color-primary;
   font-family: $font-ubuntu;
-  font-size: fz(24);
+  font-size: fz(18);
   font-weight: bold;
   letter-spacing: 0;
+
+  @include mq() {
+    font-size: fz(24);
+  }
 }
 
 .menu {
@@ -76,8 +74,12 @@ export default {
     text-transform: capitalize;
     line-height: 64px;
     display: inline-block;
-    padding: 0 0.75em;
+    padding: 0 0.25em;
     position: relative;
+
+    @include mq() {
+      padding: 0 0.75em;
+    }
 
     &::after {
       content: '';

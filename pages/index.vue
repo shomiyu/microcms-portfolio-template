@@ -1,12 +1,16 @@
 <template>
   <div>
     <div class="mainVisual">
-      <figure>
+      <picture>
+        <source
+          srcset="https://placehold.jp/375x530.png"
+          media="(max-width: 767px)"
+        />
         <img src="https://placehold.jp/1440x436.png" alt="" />
-      </figure>
+      </picture>
     </div>
 
-    <section class="sectionPrimary">
+    <section id="about" class="sectionPrimary">
       <div class="container">
         <h2 class="headingPrimary">about</h2>
         <div class="profile">
@@ -38,7 +42,7 @@
     <section class="sectionPrimary background--gray">
       <div class="container">
         <h2 class="headingPrimary">works</h2>
-        <ol class="works">
+        <ol class="row works">
           <li class="works__item">
             <nuxt-link to="#!" class="works__inner">
               <figure class="works__image">
@@ -161,7 +165,7 @@ export default {
   &__item {
     width: 100%;
 
-    @include mq(lg) {
+    @include mq() {
       width: calc((100% - 2.5em) / 2);
     }
   }
