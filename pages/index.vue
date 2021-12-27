@@ -67,7 +67,12 @@
               <div class="works__text">
                 <p class="works__name">{{ work.title }}</p>
                 <p class="works__date">
-                  <time :datetime="work.release">{{ work.release }}</time>
+                  <time
+                    :datetime="work.release"
+                    v-text="
+                      $dateFns.format(new Date(work.release), 'yyyy.MM.dd')
+                    "
+                  />
                 </p>
               </div>
             </nuxt-link>

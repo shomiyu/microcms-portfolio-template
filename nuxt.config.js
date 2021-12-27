@@ -34,6 +34,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://www.npmjs.com/package/@nuxtjs/style-resources
     '@nuxtjs/style-resources',
+    // https://www.npmjs.com/package/@nuxtjs/date-fns
+    '@nuxtjs/date-fns',
   ],
 
   styleResources: {
