@@ -30,7 +30,9 @@
     <div class="container">
       <dl class="worksItem">
         <dt class="worksItem__title">URL</dt>
-        <dd class="worksItem__contents">{{ work.url }}</dd>
+        <dd class="worksItem__contents">
+          <a :href="work.url" target="_blank">{{ work.url }}</a>
+        </dd>
       </dl>
       <dl v-if="work.position" class="worksItem">
         <dt class="worksItem__title">ポジション</dt>
