@@ -215,7 +215,7 @@ export default {
 }
 
 .buttonPrimary {
-  color: $accent-color-blue;
+  color: $key-color-black;
   display: inline-block;
   font-family: $font-ubuntu;
   font-size: fz(18);

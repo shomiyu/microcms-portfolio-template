@@ -86,7 +86,7 @@ export default {
       display: block;
       width: 0;
       height: 2px;
-      background-color: $accent-color-blue;
+      background-color: $key-color-black;
       transition: all 0.3s ease-in-out;
       position: absolute;
       left: 0;

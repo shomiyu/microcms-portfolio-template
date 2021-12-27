@@ -4,17 +4,17 @@
       <div class="container container--lg worksMainVisual__inner">
         <div class="worksMainVisual__contents">
           <h1 class="worksMainVisual__title">{{ work.title }}</h1>
-          <dl class="worksMainVisual__item">
+          <dl v-if="work.release" class="worksMainVisual__item">
             <dt class="worksMainVisual__itemName">リリース日</dt>
             <dd>
               <time :datetime="work.release">{{ work.release }}</time>
             </dd>
           </dl>
-          <dl class="worksMainVisual__item">
+          <dl v-if="work.term" class="worksMainVisual__item">
             <dt class="worksMainVisual__itemName">制作期間</dt>
             <dd>{{ work.term }}</dd>
           </dl>
-          <p>{{ work.overview }}</p>
+          <p v-if="work.overview">{{ work.overview }}</p>
         </div>
         <figure class="worksMainVisual__thumbnail">
           <img
@@ -29,10 +29,14 @@
 
     <div class="container">
       <dl class="worksItem">
+        <dt class="worksItem__title">URL</dt>
+        <dd class="worksItem__contents">{{ work.url }}</dd>
+      </dl>
+      <dl v-if="work.position" class="worksItem">
         <dt class="worksItem__title">ポジション</dt>
         <dd class="worksItem__contents">{{ work.position }}</dd>
       </dl>
-      <dl class="worksItem">
+      <dl v-if="work.responsibility" class="worksItem">
         <dt class="worksItem__title">担当</dt>
         <dd class="worksItem__contents">
           <span
@@ -52,7 +56,7 @@
           />
         </dd>
       </dl>
-      <dl class="worksItem">
+      <dl v-if="work.tools" class="worksItem">
         <dt class="worksItem__title">ツール</dt>
         <dd class="worksItem__contents">
           <span
